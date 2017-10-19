@@ -1,7 +1,7 @@
 PYTHONS = 2.7 3.5 3.6 3.7-rc
 VARIANT?=stretch
 
-.PHONY: pythons $(PYTHONS)
+.PHONY: pythons $(PYTHONS) push
 
 pythons: $(PYTHONS)
 
@@ -9,5 +9,6 @@ pythons: $(PYTHONS)
 $(PYTHONS):
 	cd "$@/$(VARIANT)" && \
 	docker build -t "pymor/python:$@" .
-
+push:
+	docker push pymor/python
 all: pythons
