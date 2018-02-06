@@ -1,4 +1,4 @@
-PYTHONS = 2.7 3.5 3.6 3.7-rc
+PYTHONS = 3.5 3.6 3.7-rc
 VARIANT?=stretch
 
 .PHONY: pythons $(PYTHONS) push
