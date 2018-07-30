@@ -20,7 +20,7 @@ script:
       set -Eeuo pipefail
       set -x
       travis_retry docker build -t "$image" .
-      ~/official-images/test/run.sh "$image"
+      ~/official-images/test/run.sh -c ${TRAVIS_BUILD_DIR}/.ci/config.sh "$image"
     )
   - |
     if [[ "${TRAVIS_PULL_REQUEST}" == "false" ]] ; then
