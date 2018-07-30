@@ -128,6 +128,7 @@ RUN cd /usr/local/bin \
 
 # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
 ENV PYTHON_PIP_VERSION 18.0
+ENV PIP_INSTALL="pip install --no-cache-dir -qq"
 
 RUN set -ex; \
 	\
