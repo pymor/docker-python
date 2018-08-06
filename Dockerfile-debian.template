@@ -19,12 +19,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		libbz2-dev \
 		libc6-dev \
 		libcurl4-openssl-dev \
+		libdb-dev \
 		libffi-dev \
 		libglib2.0-dev \
 		liblzma-dev \
 		libncurses5-dev \
 		libncursesw5-dev \
 		libreadline-dev \
+		libsqlite3-dev \
 		libssl-dev \
 		libtool \
 		libxml2-dev \

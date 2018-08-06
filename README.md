@@ -5,7 +5,7 @@ This is a fork of the Git repo of the Docker [official image](https://docs.docke
 ---
 
 -	[Travis CI:
-	![build status badge](https://img.shields.io/travis/pymor/python-docker/master.svg)](https://travis-ci.org/pymor/python-docker/branches)
+	![build status badge](https://img.shields.io/travis/pymor/docker-python/master.svg)](https://travis-ci.org/pymor/docker-python/branches)
 -	[Automated `update.sh`:
 	![build status badge](https://doi-janky.infosiftr.net/job/update.sh/job/python/badge/icon)](https://doi-janky.infosiftr.net/job/update.sh/job/python)
 
