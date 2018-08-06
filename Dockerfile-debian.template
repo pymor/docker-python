@@ -21,6 +21,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		libcurl4-openssl-dev \
 		libdb-dev \
 		libffi-dev \
+		libgdbm-dev \
 		libglib2.0-dev \
 		liblzma-dev \
 		libncurses5-dev \
