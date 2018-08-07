@@ -25,12 +25,18 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		libbz2-dev \
 		libc6-dev \
 		libcurl4-openssl-dev \
+		libdb-dev \
+		libevent-dev \
 		libffi-dev \
+		libgdbm-dev \
 		libglib2.0-dev \
+		libjpeg-dev \
 		liblzma-dev \
 		libncurses5-dev \
 		libncursesw5-dev \
+		libpng-dev \
 		libreadline-dev \
+		libsqlite3-dev \
 		libssl-dev \
 		libtool \
 		libxml2-dev \
@@ -74,7 +80,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/*
 
 ENV GPG_KEY 97FC712E4C024BBEA48A61ED3A5CA953F73C700D
-ENV PYTHON_VERSION 3.5.5
+ENV PYTHON_VERSION 3.5.6
 
 RUN set -ex \
 	&& buildDeps=' \
