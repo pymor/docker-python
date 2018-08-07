@@ -1,6 +1,6 @@
 pipeline:
   build:
-    image: docker
+    image: dunecommunity/gitlabci_dockerindocker-dockerindocker
     commands:
       - make 3.5
     volumes:
