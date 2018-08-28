@@ -39,6 +39,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		libsqlite3-dev \
 		libssl-dev \
 		libtool \
+		libfreetype6-dev \
 		libxml2-dev \
 		make \
 		patch \
