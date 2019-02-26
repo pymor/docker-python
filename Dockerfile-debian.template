@@ -93,7 +93,7 @@ deb http://cloudfront.debian.net/debian-security/ stretch/updates main contrib" 
         && ( gpg --no-tty --keyserver ipv4.pool.sks-keyservers.net  --recv-keys "$GPG_KEY" \
             || gpg --keyserver Zpool.sks-keyservers.net --recv-keys "$GPG_KEY" \
             || gpg --keyserver pgp.mit.edu --recv-keys "$GPG_KEY" \
-            || gpg --keyserver keyserver.pgp.com --recv-keys "$GPG_KEY" ); \
+            || gpg --keyserver keyserver.pgp.com --recv-keys "$GPG_KEY" ) \
 	&& gpg --no-tty --batch --verify python.tar.xz.asc python.tar.xz \
 	&& rm -rf "$GNUPGHOME" python.tar.xz.asc \
 	&& mkdir -p /usr/src/python \

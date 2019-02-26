@@ -81,7 +81,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/*
 
 ENV GPG_KEY 0D96DF4D4110E5C43FBFB17F2D347EA6AA65421D
-ENV PYTHON_VERSION 3.6.7
+ENV PYTHON_VERSION 3.6.8
 
 RUN set -ex \
 	&& buildDeps=' \
@@ -96,7 +96,10 @@ deb http://cloudfront.debian.net/debian-security/ stretch/updates main contrib" 
 	&& wget -O python.tar.xz "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz" \
 	&& wget -O python.tar.xz.asc "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz.asc" \
 	&& export GNUPGHOME="$(mktemp -d)" \
-	&& gpg --no-tty --keyserver ipv4.pool.sks-keyservers.net  --recv-keys "$GPG_KEY" \
+        && ( gpg --no-tty --keyserver ipv4.pool.sks-keyservers.net  --recv-keys "$GPG_KEY" \
+            || gpg --keyserver Zpool.sks-keyservers.net --recv-keys "$GPG_KEY" \
+            || gpg --keyserver pgp.mit.edu --recv-keys "$GPG_KEY" \
+            || gpg --keyserver keyserver.pgp.com --recv-keys "$GPG_KEY" ) \
 	&& gpg --no-tty --batch --verify python.tar.xz.asc python.tar.xz \
 	&& rm -rf "$GNUPGHOME" python.tar.xz.asc \
 	&& mkdir -p /usr/src/python \
@@ -134,7 +137,7 @@ RUN cd /usr/local/bin \
 	&& ln -s python3-config python-config
 
 # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
-ENV PYTHON_PIP_VERSION 18.1
+ENV PYTHON_PIP_VERSION 19.0.3
 ENV PIP_INSTALL="pip install --no-cache-dir -qq"
 
 RUN set -ex; \
