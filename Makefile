@@ -8,7 +8,7 @@ pythons: $(PYTHONS)
 
 $(PYTHONS):
 	cd "$@/$(VARIANT)" && \
-	docker build --pull -t "pymor/python:$@" .
+	docker build -t "pymor/python:$@" .
 push:
 	docker push pymor/python
 all: pythons
