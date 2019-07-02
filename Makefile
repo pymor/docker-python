@@ -1,5 +1,5 @@
 PYTHONS = 3.6 3.7
-VARIANT?=stretch-slim
+VARIANT?=buster-slim
 
 .PHONY: pythons $(PYTHONS) push
 
