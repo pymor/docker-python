@@ -1,5 +1,5 @@
-PYTHONS = 3.6 3.7
-VARIANT?=buster-slim
+PYTHONS = 3.6 3.7 3.8
+VARIANT?=buster/slim
 
 .PHONY: pythons $(PYTHONS) push
 
