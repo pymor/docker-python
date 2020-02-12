@@ -14,7 +14,7 @@ $(PYTHONS): IS_DIRTY
 		docker build -t pymor/python_$@:$(VER) .
 	docker tag pymor/python_$@:$(VER) pymor/python_$@:latest
 
-push:
-	for PY in $(PYTHONS) ; do \
-		docker push pymor/python_$${PY} ; \
-	done
+push_%:
+	docker push pymor/python_$*
+
+push: $(addprefix push_,$(PYTHONS))
