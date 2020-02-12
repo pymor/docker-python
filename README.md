@@ -13,4 +13,6 @@ This is a fork of the Git repo of the Docker [official image](https://docs.docke
 
 | Image  | Info |
 | :----- | :--- |
-| python | [![](https://images.microbadger.com/badges/image/pymor/python.svg)](https://microbadger.com/images/pymor/python "python base images") |
+| python_3.6 | [![](https://images.microbadger.com/badges/image/pymor/python_3.6.svg)](https://microbadger.com/images/pymor/python_3.6 "python base images") |
+| python_3.7 | [![](https://images.microbadger.com/badges/image/pymor/python_3.7.svg)](https://microbadger.com/images/pymor/python_3.7 "python base images") |
+| python_3.8 | [![](https://images.microbadger.com/badges/image/pymor/python_3.8.svg)](https://microbadger.com/images/pymor/python_3.8 "python base images") |

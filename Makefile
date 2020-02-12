@@ -1,14 +1,20 @@
 PYTHONS = 3.6 3.7 3.8
 VARIANT?=buster/slim
+VER=$(shell git log -1 --pretty=format:"%H")
 
-.PHONY: pythons $(PYTHONS) push
+all: $(PYTHONS)
 
-pythons: $(PYTHONS)
+.PHONY: push IS_DIRTY
 
+IS_DIRTY:
+	git diff-index --quiet HEAD
 
-$(PYTHONS):
+$(PYTHONS): IS_DIRTY
 	cd "$@/$(VARIANT)" && \
-	docker build -t "pymor/python:$@" .
+		docker build -t pymor/python_$@:$(VER) .
+	docker tag pymor/python_$@:$(VER) pymor/python_$@:latest
+
 push:
-	docker push pymor/python
-all: pythons
+	for PY in $(PYTHONS) ; do \
+		docker push pymor/python_$${PY} ; \
+	done
